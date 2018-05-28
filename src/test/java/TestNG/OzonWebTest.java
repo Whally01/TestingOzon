@@ -49,7 +49,7 @@ public class OzonWebTest extends TestBase {
      * Находим первый элемент и переходим на нее нажаетием на этот блок
      */
     @Test(description = "Выбрать первый товар.", dependsOnMethods = "checkShowingGoods")
-    public void selectFirstGood() {
+    public void selectFirstGoods() {
         getWebDriver().findElement(By.xpath("/html/body/div[2]/div[2]/div[2]/div[4]/div/div/div[3]/div[1]/div[1]/div/a")).click();
     }
 
@@ -57,7 +57,7 @@ public class OzonWebTest extends TestBase {
      * Находим цену и название товара и записываем их в переменные
      */
     @Test(description = "Запомнить стоимость и название данного товара.", dependsOnMethods = "selectFirstGood")
-    public void savePriceAndNameGood() {
+    public void savePriceAndNameGoods() {
         price = getWebDriver().findElement(By.cssSelector("div.bOzonPrice:nth-child(3) > span:nth-child(1)")).getText();
         name = getWebDriver().findElement(By.className("bItemName")).getText();
     }
@@ -88,7 +88,7 @@ public class OzonWebTest extends TestBase {
      * Находим иконку для удаления и кликаем по ней
      */
     @Test(description = "Выбрать этот товар в корзине и «Удалить» из корзины.", dependsOnMethods = "goToBugAndCheckGoods")
-    public void selectAndDeleteGood() {
+    public void selectAndDeleteGoods() {
         getWebDriver().findElement(By.xpath("/html/body/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[3]/div[1]/div/div/div[1]/div/div[2]/div/div/div[3]/div/div[2]")).click();
     }
 
