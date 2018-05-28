@@ -98,7 +98,7 @@ public class OzonWebTest extends TestBase {
     @Test(description = "Проверить, что корзина пуста.", dependsOnMethods = "selectAndDeleteGood")
     public void checkBugEmptiness() throws InterruptedException {
         Boolean isPresent = getWebDriver().findElements(By.cssSelector(".eCartPage_flexBlocks")).size() > 0;
-        if (!isPresent)
+        if (isPresent)
             Assert.fail("Корзина не пуста!");
     }
 
